@@ -35,7 +35,7 @@ function StudentDetails({ student, index }) {
 				<button onClick={() => AddTag(student.id)}>+</button>
 			</li>
 
-			{showGrades && <li>{student.grades.map((item, i) => <p key={i}>{item}</p>)}</li>}
+			{showGrades && <li>Grades: {student.grades.map((item, i) => <p key={i}>{item}</p>)}</li>}
 		</ul>
 	)
 }
