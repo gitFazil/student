@@ -20,7 +20,7 @@ function App() {
     async function api() {
       let list = await fetch('https://api.hatchways.io/assessment/students').then(res => res.json().then(data => data.students))
       let newList = list.map(student => {
-        return { ...student, tags: ['collage'] }
+        return { ...student, tags: [] }
       })
       setState({ studentList: newList })
     }
