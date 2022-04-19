@@ -50,7 +50,7 @@ function App() {
           <input type='text' value={tag} placeholder=' search tag..........' onChange={(e) => setTag(e.target.value)} />
         </div>
 
-        {filteredStudent.map((student) => <StudentDetails student={student} />)}
+        {filteredStudent.map((student, i) => <StudentDetails student={student} key={i} />)}
 
       </div>
     </StudentContext.Provider>
