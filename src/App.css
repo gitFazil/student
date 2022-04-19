@@ -1,33 +1,64 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-self: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin: auto;
+  list-style: none;
+  padding: 9px;
 }
-
+.search-area{
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+}
+.search-area input{
+  min-width: 90%;
+  margin: 5px;
+  height: 20px;
+}
+li{
+  list-style: none;
+  padding: 5px;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  border-radius: 2px;
+  width: 90%;
+  margin: 1rem;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+img{
+  width: 90px;
+}
+ul li button{
+  height: 30px;
+  min-width: 40px;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+}
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: transparent;
+}
+input:focus {
+  outline: none;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
