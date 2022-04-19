@@ -17,7 +17,6 @@ function StudentDetails({ student, index }) {
 			}
 			return list;
 		})
-		console.log(newList)
 		setState({ studentList: newList })
 		setAddTag('')
 	}
