@@ -28,13 +28,13 @@ function StudentDetails({ student, index }) {
 			<li>{`Skill: ${student.skill}`}</li>
 			<li>{`Company: ${student.company}`}</li>
 			<li>Avg: {(student.grades.reduce((a, i) => a + parseInt(i), 0) / student.grades.length + true).toFixed(2) + '%'}</li>
-			<li>{student.tags.map((item, i) => <button key={i}>{item}</button>)}</li>
+			<li>{student.tags.map((item, i) => { return <button key={i}>{item}</button> })}</li>
 			<li>
 				<input type='text' value={addTag} onChange={(e) => setAddTag(e.target.value)} />
 				<button onClick={() => AddTag(student.id)}>+</button>
 			</li>
 
-			{showGrades && <li>Grades: {student.grades.map((item, i) => <p key={i}>{item}</p>)}</li>}
+			{showGrades && <li>Grades: {student.grades.map((item, i) => { return <p key={i}>{item}</p> })}</li>}
 		</ul>
 	)
 }

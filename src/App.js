@@ -20,7 +20,7 @@ function App() {
     async function api() {
       let list = await fetch('https://api.hatchways.io/assessment/students').then(res => res.json().then(data => data.students))
       let newList = list.map(student => {
-        return { ...student, tags: [] }
+        return { ...student, tags: [student.skill] }
       })
       setState({ studentList: newList })
     }
@@ -29,12 +29,14 @@ function App() {
 
   let filteredStudent = useMemo(() => {
     return state.studentList.filter(data => {
+      console.log(data.tags.find(e => e.toLocaleLowerCase().includes(tag.toLocaleLowerCase())))
       if (tag === '' && search === '') {
         return data
       }
 
       else if (data.firstName.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-        && data.tags.find(e => e.toLocaleLowerCase().includes(tag.toLocaleLowerCase()))) {
+        && data.tags.find(e => e.toLocaleLowerCase().includes(tag.toLocaleLowerCase()))
+      ) {
         return data;
       }
     })
@@ -56,5 +58,6 @@ function App() {
     </StudentContext.Provider>
   );
 }
+
 
 export default App;
